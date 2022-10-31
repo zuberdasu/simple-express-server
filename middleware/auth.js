@@ -7,9 +7,16 @@ module.exports.checkToken = (req, res, next) => {
   }
 
   //find the user
-  const indexOfItem = simpsons.findIndex(
-    (item) => item.token === headers.token
-  );
+  let indexOfItem = -1;
+  simpsons.forEach((character, index) => {
+    if (character.tokens) {
+      character.tokens.forEach((token) => {
+        if (token === headers.token) {
+          indexOfItem = index;
+        }
+      });
+    }
+  });
 
   //check the token
   if (indexOfItem === -1) {

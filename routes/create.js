@@ -9,6 +9,8 @@ router.post("/", (req, res) => {
   if (quote && character && image && characterDirection) {
     //append a random id
     req.body.id = getUniqueId(64);
+    //create empty array for tokens
+    req.body.tokens = [];
     //append the body to the simpsons array
     req.simpsons.push(req.body);
     res.send({ status: 1 });

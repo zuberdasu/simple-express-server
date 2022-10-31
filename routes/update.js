@@ -7,13 +7,13 @@ router.put("/", (req, res) => {
   if (body.quote && typeof body.quote === "string") {
     currentUser.quote = body.quote;
   }
-  if (body.character && typeof body.quote === "string") {
+  if (body.character && typeof body.character === "string") {
     currentUser.character = body.character;
   }
-  if (body.image && typeof body.quote === "string") {
+  if (body.image && typeof body.image === "string") {
     currentUser.image = body.image;
   }
-  if (body.characterDirection && typeof body.quote === "string") {
+  if (body.characterDirection && typeof body.characterDirection === "string") {
     currentUser.characterDirection = body.characterDirection;
   }
 
